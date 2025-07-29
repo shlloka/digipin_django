@@ -1,0 +1,26 @@
+<!-- digipin_app/templates/digipin_app/home.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>DigiPIN Generator</title>
+</head>
+<body>
+    <h1>DigiPIN Generator</h1>
+
+    <form method="get">
+        <label>Latitude:</label>
+        <input type="text" name="lat" required><br><br>
+
+        <label>Longitude:</label>
+        <input type="text" name="lon" required><br><br>
+
+        <button type="submit">Get DigiPIN</button>
+    </form>
+
+    {% if digipin %}
+        <h2>DigiPIN: {{ digipin }}</h2>
+    {% elif error %}
+        <p style="color:red;">{{ error }}</p>
+    {% endif %}
+</body>
+</html>
